@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body class="bg-light">
+    <section class="d-flex">
+      <!-- pour ajoute et affichaje -->
+      <aside class="col-3 bg-light vh-100 border rounded-3">
+        <!-- " add the new worker" -->
+        <div class="p-2 border rounded-3">
+          <span>New Worker sin-up </span>
+      </div>
+         <button type="button" class="btn btn-primary w-100 " data-bs-toggle="modal" data-bs-target="#add_woker">
+     add New Worker 
+</button>
+        </div>
+        <!-- the cart of the worker -->
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex border bg-light rounded-3">
+              <div>
+                <img
+                  src="1329-1760996163.png"
+                  class="img-thumbnail background-sizi rounded-circle"
+                  style="width: 80px; height: 80px"
+                  alt="photo de worker"
+                />
+              </div>
+
+              <div>
+                <h5 class="card-title">mouad sertai</h5>
+                <p class="card-text">develop java & devops</p>
+              </div>
+
+              <button class="btn btn-primary">+</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!--  -->
+
+      <section class="col-9 vh-100 border border-4 rounded-3">
+        <div id="the_ofise" class="vh-100">
+          <div id="part_ofic_1" class=" ">
+            <!-- part_1_1 -->
+            <div class="containet">
+              <div class="w-50">
+                <div
+                  class="d-flex text-center align-items-center border bg-light rounded-3"
+                >
+                  <div>
+                    <img
+                      src="1329-1760996163.png"
+                      class="img-thumbnail background-sizi rounded-circle"
+                      style="width: 40px; height: 40px"
+                      alt="photo de worker"
+                    />
+                  </div>
+                  <div>
+                    <p class="card-title">mouad sertai</p>
+                    <p class="card-text">develop</p>
+                    <p></p>
+                  </div>
+
+                  <button class="btn btn-danger rounded-circle">X</button>
+                </div>
+              </div>
+
+             
+            </div>
+            <!-- part_1_2 -->
+            <div id=" Réception" class="containet bg-warning">
+              <!--  -->
+                      
+              
+
+              <!--  -->
+            </div>
+          </div>
+          <div class=""></div>
+          <div id="part_ofic_2" class=" ">
+            <div class=" d-flex">
+                <div class=" col"><button class="btn btn-danger position-  bottom-0 end-0  ">X</button></div>
+                <div class="col">ee</div>
+            </div>
+
+            <div class=""></div>
+            <div class="d-flex">
+                    <div class=" col">hi</div>
+                <div class="col">ee</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- Scrollable modal -->
+   <div class="modal fade" id="add_woker" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form name="ajouterwoker" action="" class="form">
+             <div>
+                <label for="firstname" class="form_label">first name</label>
+                <input type="text" name="firstname" id="firstname" class="form-control" placeholder="firstname">
+             </div>
+             <div>
+                <lablel for="lastname" class="form_label">last name</lablel>
+                <input type="text" class="form-control" placeholder="last name">
+             </div>
+             <div>
+                <lsbel for="email" class="form_label">email</lsbel>
+                <input type="email" class="form-control" placeholder="email">
+             </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
