@@ -11,7 +11,8 @@
 }
 #the_ofise{
     display: grid;
-    grid-template-columns: 360px 160px 440px ;
+    grid-template-columns: 360px 140px 440px ;
+    
 }
 #part_ofic_1{
     display: grid;

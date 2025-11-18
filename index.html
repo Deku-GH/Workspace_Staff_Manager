@@ -272,32 +272,28 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form name="ajouterwoker" action="" class="form">
+          <form name="addworker" action="" class="form">
             <div>
-              <label for="firstname" class="form_label">first name</label>
-              <input type="text" name="firstname" id="firstname" class="form-control" placeholder="firstname">
-            </div>
-            <div>
-              <lablel for="lastname" class="form_label">last name</lablel>
-              <input type="text" class="form-control" placeholder="last name">
+              <label for="fullname" class="form_label">full name</label>
+              <input type="text" name="fullname" id="fullname" class="form-control" placeholder="fullname">
             </div>
             <div>
               <lsbel for="email" class="form_label">email</lsbel>
-              <input type="email" class="form-control" placeholder="email">
+              <input type="email" class="form-control" placeholder="email" id="email">
             </div>
             <div>
               <div>
                 <lsbel for="tele" class="form_label">Téléphone</lsbel>
-                <input type="number" class="form-control" placeholder="Téléphone">
+                <input type="number" class="form-control" placeholder="Téléphone" id="telephone">
               </div>
               <lsbel for="photo" class="form_label">photo</lsbel>
-              <input type="url" class="form-control" placeholder="url photo">
+              <input type="url" id="photo" class="form-control" placeholder="url photo">
             </div>
 
             <div>
               <label for="roles ">roles</label>
-              <select class="form-select" aria-label="Default select example">
-                <option selected>the role</option>
+              <select id="role" class="form-select" aria-label="Default select example">
+                <option selected >the role</option>
                 <option value="it">IT </option>
                 <option value="sécurité">securite</option>
                 <option value="Manager ">Manager</option>
@@ -312,6 +308,8 @@
                 <input type="text" class="form-control" placeholder="Expériences professionnelles">
               </div>
             </div>
+               <button type="submit" class="btn btn-primary w-100" data-bs-dismiss="modal">add</button>
+
           </form>
         </div>
         <div class="modal-footer">
