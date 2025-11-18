@@ -55,3 +55,40 @@ document.forms["addworker"].addEventListener('submit', (e) => {
 
     affichege(worker)
 })
+
+
+  //add modaldaynamic
+
+  document.getElementById('addExp').addEventListener('click',(even)=>{
+  
+    let formadaynamic = document.getElementById('formadaynamic');
+            
+              console.log(formadaynamic);          
+    let card =`<div class="p-2  bg-secondary">
+              <div >
+                <lsbel for="Expériences professionnelles" class="form_label">Expériences professionnelles</lsbel>
+                <input type="text" class="form-control" placeholder="Expériences professionnelles">
+              </div>
+              <div class="row ">
+                <lsbel for="Expériences professionnelles" class="form_label">the time</lsbel>
+                <div class="col-auto">
+                  <select id="time" class="form-select" aria-label="Default select example">
+                    <option selected>piriod</option>
+                    <option value="it">day</option>
+                    <option value="sécurité">month</option>
+                    <option value="Manager ">years</option>
+                  </select>
+                </div>
+                <div class="col-auto">
+                  <input type="number" class="form-control" placeholder="the time you spend" max="50">
+                </div>
+
+              </div>
+
+            </div>
+    `
+      
+    
+    formadaynamic.innerHTML+=card
+    
+  })

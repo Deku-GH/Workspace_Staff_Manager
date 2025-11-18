@@ -157,7 +157,7 @@
             <div class="containet col ">
               <div class="fw-bold">Salle du personnel <button class="btn btn-primary">+</button></div>
               <div class="row">
-                 <!-- the palce of the the card  -->
+                <!-- the palce of the the card  -->
                 <div class="containet w-50 ">
                   <div class=" d-flex text-center  align-items-center border bg-light rounded-3">
                     <div>
@@ -203,15 +203,15 @@
                     <button class="btn btn-danger rounded-circle">X</button>
                   </div>
                 </div>
-                  <!-- the palce of the the card  -->
+                <!-- the palce of the the card  -->
               </div>
             </div>
             <!-- darchives -->
             <div class="containet col  ">
               <div class="fw-bold">Salle darchives <button class="btn btn-primary">+</button></div>
               <div class="row">
-                 <!-- the palce of the the card  -->
-                  <div class="containet w-50 ">
+                <!-- the palce of the the card  -->
+                <div class="containet w-50 ">
                   <div class=" d-flex text-center  align-items-center border bg-light rounded-3">
                     <div>
                       <img src="1329-1760996163.png" class="img-thumbnail background-sizi rounded-circle"
@@ -240,7 +240,8 @@
 
                     <button class="btn btn-danger rounded-circle">X</button>
                   </div>
-                </div><div class="containet w-50 ">
+                </div>
+                <div class="containet w-50 ">
                   <div class=" d-flex text-center  align-items-center border bg-light rounded-3">
                     <div>
                       <img src="1329-1760996163.png" class="img-thumbnail background-sizi rounded-circle"
@@ -255,7 +256,7 @@
                     <button class="btn btn-danger rounded-circle">X</button>
                   </div>
                 </div>
-                   <!-- the palce of the the card  -->
+                <!-- the palce of the the card  -->
               </div>
             </div>
           </div>
@@ -264,9 +265,9 @@
     </section>
   </section>
   <!-- Scrollable modal -->
-  <div class="modal fade" id="add_woker" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade " id="add_woker" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content bg-primary-subtle ">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -293,26 +294,47 @@
             <div>
               <label for="roles ">roles</label>
               <select id="role" class="form-select" aria-label="Default select example">
-                <option selected >the role</option>
+                <option selected>the role</option>
                 <option value="it">IT </option>
                 <option value="sécurité">securite</option>
                 <option value="Manager ">Manager</option>
                 <option value="Nettoyage">Nettoyage </option>
                 <option value="Autres rôles">Autres rôles</option>
-
               </select>
             </div>
-            <div>
-              <div>
+            
+            <div id="formadaynamic"  class=" m-2 border p-2 border-black rounded-4 bg-secondary-subtle">
+              <div  class="p-2  bg-secondary">
+              <div >
                 <lsbel for="Expériences professionnelles" class="form_label">Expériences professionnelles</lsbel>
                 <input type="text" class="form-control" placeholder="Expériences professionnelles">
               </div>
+              <div class="row ">
+                <lsbel for="Expériences professionnelles" class="form_label">the time</lsbel>
+                <div class="col-auto">
+                  <select id="time" class="form-select" aria-label="Default select example">
+                    <option selected>piriod</option>
+                    <option value="it">day</option>
+                    <option value="sécurité">month</option>
+                    <option value="Manager ">years</option>
+                  </select>
+                </div>
+                <div class="col-auto">
+                  <input type="number" class="form-control" placeholder="the time you spend" max="50">
+                </div>
+
+              </div>
+
             </div>
-               <button type="submit" class="btn btn-primary w-100" data-bs-dismiss="modal">add</button>
+            </div >
+            
+            <button type="submit" class="btn btn-primary w-100" data-bs-dismiss="modal">add</button>
 
           </form>
         </div>
         <div class="modal-footer">
+                        <button type="button" id="addExp" class="btn btn-primary w-100" >ajoute Expériences</button>
+
           <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">add</button>
         </div>
