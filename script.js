@@ -16,8 +16,8 @@ function affichege(worker) {
    
     let card = document.getElementById('card');
  
-        let cardbody = `<div class=" card-body">
-          <div class="d-flex   border bg-light rounded-3">
+        let cardbody = `<div class=" ">
+          <div class="d-flex justify-content-between  border bg-light rounded-3">
             <div>
               <img src="${worker.photo}" class="img-thumbnail background-sizi rounded-circle"
                 style="width: 80px; height: 80px" alt="photo de worker" />
@@ -98,5 +98,5 @@ document.forms["addworker"].addEventListener('submit', (e) => {
     formadaynamic.innerHTML+=card
     
   })
-    
+
 
