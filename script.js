@@ -28,7 +28,7 @@ function affichege(worker) {
               <p class="card-text">${worker.role}</p>
             </div>
 
-            <button class="btn btn-primary">+</button>
+            <button  class="btn btn-primary">+</button>
           </div>`
         card.innerHTML += cardbody;
 
@@ -98,4 +98,5 @@ document.forms["addworker"].addEventListener('submit', (e) => {
     formadaynamic.innerHTML+=card
     
   })
-  
+    
+

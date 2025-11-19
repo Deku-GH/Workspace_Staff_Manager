@@ -1,24 +1,49 @@
-#the_ofise{
-    
-    background-image: url(plan-69159a65c5684763515973-6918972274aec233423111.jpg);
+#comference{
+background-image: url('1.png');
+background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+   
+
+}
+#reception{
+    background-image: url('5.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    height: 100%;
-    width: 100%
-
+   
 
 }
-#the_ofise{
-    display: grid;
-    grid-template-columns: 360px 140px 440px ;
-    
+#seveurs{
+background-image: url('3.png');
+background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+   
+
 }
-#part_ofic_1{
-    display: grid;
-    grid-template-rows: 200px 400px ;
+#securirite{
+background-image: url('4.png');
+background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+   
+
 }
-#part_ofic_2{
-    display: grid;
-    grid-template-rows:200px 200px  200px ;
+#personnal{
+background-image: url('6.png');
+background-position: center;
+    background-repeat: no-repeat;
+   
+   
+
+}
+#archived{
+    background-image: url('2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+   
+
+
 }
