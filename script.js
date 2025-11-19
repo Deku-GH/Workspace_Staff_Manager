@@ -49,12 +49,17 @@ document.forms["addworker"].addEventListener('submit', (e) => {
         Experiences : []
 
     }
+    const data = new FormData(e.target)
+    console.log(data.getAll("start"));
+    
 
-          for(let i = 0 ; i <=worker.Experiences.length;i++ ){
+
+          for(let i = 0 ; i <les_value.exp.length;i++ ){
        worker.Experiences.push({
-               experiences:les_value[i].exp.value,
-               period : les_value[i].start.value,
-                 time :les_value[i].end.value})
+               experiences:les_value.exp[i].value,
+               period : les_value.start[i].value,
+                 time :les_value.endDate[i].value
+                })
        }
 
     console.log("worke");
@@ -83,7 +88,7 @@ document.forms["addworker"].addEventListener('submit', (e) => {
                   </div>
                   <div class="col-auto">
                     <lsbel for="Expériences professionnelles" class="form_label"> time end</lsbel>
-                    <input type="date" class="form-control" id="start" placeholder="Expériences professionnelles">
+                    <input type="date" class="form-control"name="endDate" id="end" placeholder="Expériences professionnelles">
                   </div>
                 </div>
               </div>
