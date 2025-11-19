@@ -302,38 +302,35 @@
                 <option value="Autres rôles">Autres rôles</option>
               </select>
             </div>
-            
-            <div id="formadaynamic"  class=" m-2 border p-2 border-black rounded-4 bg-secondary-subtle">
-              <div  class="p-2  bg-secondary">
-              <div >
-                <lsbel for="Expériences professionnelles" class="form_label">Expériences professionnelles</lsbel>
-                <input type="text" class="form-control" placeholder="Expériences professionnelles">
-              </div>
-              <div class="row ">
-                <lsbel for="Expériences professionnelles" class="form_label">the time</lsbel>
-                <div class="col-auto">
-                  <select id="time" class="form-select" aria-label="Default select example">
-                    <option selected>piriod</option>
-                    <option value="it">day</option>
-                    <option value="sécurité">month</option>
-                    <option value="Manager ">years</option>
-                  </select>
+
+            <div id="formadaynamic" class=" m-2 border p-2 border-black rounded-4 bg-secondary-subtle">
+              <div class="p-2  bg-secondary">
+                <div>
+                  <lsbel for="Expériences professionnelles" class="form_label">Expériences professionnelles</lsbel>
+                  <input type="text" class="form-control" id="exp" placeholder="Expériences professionnelles">
                 </div>
-                <div class="col-auto">
-                  <input type="number" class="form-control" placeholder="the time you spend" max="50">
+                <div class="row ">
+                  <div class="col-auto">
+                    <lsbel for="Expériences professionnelles" class="form_label"> time start</lsbel>
+                    <input type="date" class="form-control" id="start" placeholder="Expériences professionnelles">
+                  </div>
+                  <div class="col-auto">
+                    <lsbel for="Expériences professionnelles" class="form_label"> time end</lsbel>
+                    <input type="date" class="form-control" id="end" placeholder="Expériences professionnelles">
+
+                  </div>
+
                 </div>
 
               </div>
-
             </div>
-            </div >
-            
+
             <button type="submit" class="btn btn-primary w-100" data-bs-dismiss="modal">add</button>
 
           </form>
         </div>
         <div class="modal-footer">
-                        <button type="button" id="addExp" class="btn btn-primary w-100" >ajoute Expériences</button>
+          <button type="button" id="addExp" class="btn btn-primary w-100">ajoute Expériences</button>
 
           <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">add</button>

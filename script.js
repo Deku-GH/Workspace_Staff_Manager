@@ -38,17 +38,24 @@ function affichege(worker) {
 document.forms["addworker"].addEventListener('submit', (e) => {
 
     e.preventDefault();
-    let from = e.target;
+    let les_value =e.target;
 
     let worker = {
-        fullname: from.fullname.value,
-        role: from.role.value,
-        telephone: from.telephone.value,
-        email: from.email.value,
-        photo: from.photo.value
+        fullname: les_value.fullname.value,
+        role:les_value.role.value,
+        telephone: les_value.telephone.value,
+        email:les_value.email.value,
+        photo:les_value.photo.value,
+        Experiences : []
 
     }
 
+          for(let i = 0 ; i <=worker.Experiences.length;i++ ){
+       worker.Experiences.push({
+               experiences:les_value[i].exp.value,
+               period : les_value[i].start.value,
+                 time :les_value[i].end.value})
+       }
 
     console.log("worke");
     workers.push(worker)
@@ -64,31 +71,26 @@ document.forms["addworker"].addEventListener('submit', (e) => {
     let formadaynamic = document.getElementById('formadaynamic');
             
               console.log(formadaynamic);          
-    let card =`<div class="p-2  bg-secondary">
-              <div >
-                <lsbel for="Expériences professionnelles" class="form_label">Expériences professionnelles</lsbel>
-                <input type="text" class="form-control" placeholder="Expériences professionnelles">
-              </div>
-              <div class="row ">
-                <lsbel for="Expériences professionnelles" class="form_label">the time</lsbel>
-                <div class="col-auto">
-                  <select id="time" class="form-select" aria-label="Default select example">
-                    <option selected>piriod</option>
-                    <option value="it">day</option>
-                    <option value="sécurité">month</option>
-                    <option value="Manager ">years</option>
-                  </select>
+    let card =`   <div class="p-2  bg-secondary">
+                <div>
+                  <lsbel for="Expériences professionnelles" class="form_label">Expériences professionnelles</lsbel>
+                  <input type="text" class="form-control" id="exp" placeholder="Expériences professionnelles">
                 </div>
-                <div class="col-auto">
-                  <input type="number" class="form-control" placeholder="the time you spend" max="50">
+                <div class="row ">
+                  <div class="col-auto">
+                    <lsbel for="Expériences professionnelles" class="form_label"> time start</lsbel>
+                    <input type="date" class="form-control" id="start" placeholder="Expériences professionnelles">
+                  </div>
+                  <div class="col-auto">
+                    <lsbel for="Expériences professionnelles" class="form_label"> time end</lsbel>
+                    <input type="date" class="form-control" id="start" placeholder="Expériences professionnelles">
+                  </div>
                 </div>
-
               </div>
-
-            </div>
     `
       
     
     formadaynamic.innerHTML+=card
     
   })
+  
