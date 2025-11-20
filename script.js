@@ -9,14 +9,14 @@ let workers = [
     }
 
 ]
-
+// affichegedetailedempl()
 
 function affichege(worker) {
     console.log(worker);
    
     let card = document.getElementById('card');
  
-        let cardbody = `<div class=" ">
+        let cardbody = `<div class="container">
           <div class="d-flex justify-content-between  border bg-light rounded-3">
             <div>
               <img src="${worker.photo}" class="img-thumbnail background-sizi rounded-circle"
@@ -28,7 +28,8 @@ function affichege(worker) {
               <p class="card-text">${worker.role}</p>
             </div>
 
-            <button  class="btn btn-primary">+</button>
+            <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#detailprofile">
+                +</button>
           </div>`
         card.innerHTML += cardbody;
 
@@ -64,7 +65,7 @@ document.forms["addworker"].addEventListener('submit', (e) => {
 
     console.log("worke");
     workers.push(worker)
-
+affichegedetailedempl()
     affichege(worker)
 })
 
@@ -99,4 +100,66 @@ document.forms["addworker"].addEventListener('submit', (e) => {
     
   })
 
+affichegeworker()
+function affichegeworker() {
+     let listcard  = document.getElementById('detailecard');
+   
+    
+      console.log(listcard);
+      
+      workers.forEach(Element =>{
 
+        let card = `<div class="container">
+          <div class="d-flex justify-content-between  border bg-light rounded-3">
+            <div>
+              <img src="${Element.photo}" class="img-thumbnail background-sizi rounded-circle"
+                style="width: 80px; height: 80px" alt="photo de worker" />
+            </div>
+
+            <div>
+              <h5 class="card-title">${Element.fullname}</h5>
+              <p class="card-text">${Element.role}</p>
+            </div>
+
+            <butto  class="btn btn-primary">+</butto>
+          </div>`
+       listcard.innerHTML += card;
+      })
+}
+
+
+
+function affichegedetailedempl() {
+     let email = document.getElementById('email_affi');
+      let photo  = document.getElementById('photo_affi');
+       let fullname  = document.getElementById('fullname_affi');
+      
+              let listcard=document.getElementById('listcard')
+      console.log(listcard);
+      workers.forEach(Element =>{
+                    
+        let card = `<div class="container ">
+            <div class="text-center ">
+              <img id="${Element.photo}" src="1329-1760996163.png" class=" img-thumbnail background-sizi rounded-circle"
+                style="width: 160px; height: 160px" alt="photo de worker" />
+            </div>
+
+            <div>
+              <h5 id="fullname_affi"class="card-title">full name :${Element.fullname}</h5>
+               <p id="email_affi" class="card-text"> Role : ${Element.role}</p>
+              <p id="role_affi" class="card-text"> Role : ${Element.role}</p>
+            </div>
+            <div>
+              <div class="card-text">Expériences:</div>
+              <div class="card-text">start:</div>
+              <div class="card-text">end:</div>
+            </div>
+            <!--  -->
+          </div>`
+        listcard.innerHTML += card;
+
+      })
+      
+        
+
+}
