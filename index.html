@@ -25,20 +25,7 @@
       </button>
       </div>
       <!-- the cart of the worker -->
-      <div id="card" class=" containet ">
-        <div class="containet ">
-          <div class="  d-flex border bg-light rounded-3">
-            <div>
-              <img src="1329-1760996163.png" class="img-thumbnail background-sizi rounded-circle"
-                style="width: 80px; height: 80px" alt="photo de worker" />
-            </div>
-            <div>
-              <h5 class="card-title">mouad sertai</h5>
-              <p class="card-text">develop java & devops</p>
-            </div>
-            <button class="btn btn-primary">+</button>
-          </div>
-        </div>
+      <div id="card" class="card containet ">
         <div class="containet ">
           <div class=" containet d-flex border bg-light rounded-3">
             <div>
@@ -76,8 +63,7 @@
                   <h5 class="card-title">mouad sertai</h5>
                   <p class="card-text">develop java & devops</p>
                 </div>
-                 <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#detailprofile">
-                +</button>
+                 <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#detailprofile">X</button>
               </div>
             </div>
           </div>
@@ -151,10 +137,10 @@
               <select id="role" class="form-select" aria-label="Default select example">
                 <option selected>the role</option>
                 <option value="it">IT </option>
-                <option value="sécurité">securite</option>
-                <option value="Manager ">Manager</option>
+                <option value="securite">securite</option>
+                <option value="Manager">Manager</option>
                 <option value="Nettoyage">Nettoyage </option>
-                <option value="Autres rôles">Autres rôles</option>
+                <option value="Autres roles">Autres rôles</option>
               </select>
             </div>
 
@@ -210,7 +196,25 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">profile</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div id="listcard" class="modal-body">
+        <div  class="modal-body">
+          <div class="container">
+            <div class="text-center ">
+              <img id="photo_affi"  src="1329-1760996163.png" class=" img-thumbnail background-sizi rounded-circle"
+                style="width: 160px; height: 160px" alt="photo de worker"  />
+            </div>
+
+            <div>
+              <h5 id="fullname_affi"class="card-title">full name :</h5>
+               <p id="email_affi" class="card-text"> EMIAL: </p>
+              <p id="role_affi" class="card-text"> Role : </p>
+            </div>
+
+            <div id="listcard">
+              
+            </div>
+
+            <!--  -->
+          </div>
 
         </div>
         <div class="modal-footer">
@@ -221,8 +225,7 @@
     </div>
   </div>
   <!--modal =2  -->
-  <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#detaileworker">
-    effiche</button>
+  
   <!--  -->
   <div class="modal fade" id="detaileworker" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
