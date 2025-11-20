@@ -13,9 +13,9 @@
 </head>
 
 <body class="row bg-light">
-  <section id="body" class="d-flex  ">
+  <section id="body" class="d-flex flex-column flex-md-row w-100  ">
     <!-- pour ajoute et affichaje -->
-    <aside class=" col-3 bg-light vh-100 border rounded-3">
+    <aside class=" container col-12 col-md-4 col-lg-3 bg-light border rounded-3 p-2">
       <!-- " add the new worker" -->
       <div class="p-2 border rounded-3">
         <span>New Worker sin-up </span>
@@ -27,7 +27,7 @@
       <!-- the cart of the worker -->
       <div id="card" class="card containet ">
         <div class="containet ">
-          <div class=" containet d-flex border bg-light rounded-3">
+          <div class=" d-flex border bg-light rounded-3 p-2 align-items-center gap-2">
             <div>
               <img src="1329-1760996163.png" class="img-thumbnail background-sizi rounded-circle"
                 style="width: 80px; height: 80px" alt="photo de worker" />
@@ -43,18 +43,18 @@
       </div>
     </aside>
     <!-- th section-hero -->
-    <section class=" containet col-9 vh-100 border border-4 rounded-3">
+    <section class=" container col-12 col-md-8 col-lg-9 border border-4 rounded-3 mt-3 mt-md-0">
       <div id="the_ofise" class="d-grid vh-100 ">
         <div class="row">
           <!-- comference -->
-          <div class="col-4 " id="comference">
+          <div class="col-12 col-md-6 col-lg-4 " id="comference">
             <div class="d-flex justify-content-center">
               <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#detaileworker">
                 +</button>
             </div>
 
-            <div class="card-body d-grid">
-              <div class="d-flex border bg-light rounded-3">
+            <div class="card-body ">
+              <div class="d-flex border bg-light rounded-3 p-2 align-items-center gap-2">
                 <div>
                   <img src="1329-1760996163.png" class="img-thumbnail background-sizi rounded-circle"
                     style="width: 80px; height: 80px" alt="photo de worker" />
@@ -68,13 +68,13 @@
             </div>
           </div>
           <!-- reception -->
-          <div class="col-4" id="reception">reception <div class="d-flex justify-content-center">
+          <div class="col-12 col-md-6 col-lg-4" id="reception">reception <div class="d-flex justify-content-center">
               <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#detaileworker">
                 +</button>
             </div>
           </div>
           <!-- seveurs -->
-          <div class="col-4" id="seveurs"> seveurs <div class="d-flex justify-content-center">
+          <div class="col-12 col-md-6 col-lg-4" id="seveurs"> seveurs <div class="d-flex justify-content-center">
               <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#detaileworker">
                 +</button>
             </div>
@@ -82,19 +82,19 @@
         </div>
         <div class="row">
           <!-- securirite -->
-          <div class="col-4" id="securirite">securirite <div class="d-flex justify-content-center">
+          <div class="col-12 col-md-6 col-lg-4" id="securirite">securirite <div class="d-flex justify-content-center">
               <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#detaileworker">
                 +</button>
             </div>
           </div>
           <!-- personnal -->
-          <div class="col-4" id="personnal">personnal <div class="d-flex justify-content-center">
+          <div class="col-12 col-md-6 col-lg-4" id="personnal">personnal <div class="d-flex justify-content-center">
               <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#detaileworker">
                 +</button>
             </div>
           </div>
           <!-- archived -->
-          <div class="col-4" id="archived">archived <div class="d-flex justify-content-center">
+          <div class="col-12 col-md-6 col-lg-4" id="archived">archived <div class="d-flex justify-content-center">
               <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#detaileworker">
                 +</button>
             </div>
@@ -149,7 +149,7 @@
                 <div>
                   <lsbel for="Expériences professionnelles" class="form_label">Expériences
                     professionnelles</lsbel>
-                  <input type="text" class="form-control" name="exp" id="exp"
+                  <input type="text" class="form-control" name="exps" id="exp"
                     placeholder="Expériences professionnelles">
                 </div>
                 <div class="row ">
@@ -204,7 +204,7 @@
             </div>
 
             <div>
-              <h5 id="fullname_affi"class="card-title">full name :</h5>
+              <h5 id="fullname_affi"class="card-title">full name : </h5>
                <p id="email_affi" class="card-text"> EMIAL: </p>
               <p id="role_affi" class="card-text"> Role : </p>
             </div>
