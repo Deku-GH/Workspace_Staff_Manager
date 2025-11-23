@@ -90,14 +90,18 @@ function affichege() {
   })
 
 
-  let btn = document.querySelectorAll(".cardItem")
-  btn.addEventListener("click", finindex())
+  document.querySelectorAll(".cardItem").forEach(item => {
+    item.addEventListener("click", () => {
+      let indx = item.getAttribute("data-index");
+      affichegedetailedempl(indx);
+    });
+  });
 
 }
 document.getElementById('addExp').addEventListener('click', (even) => {
 
   let formadaynamic = document.getElementById('formadaynamic');
-
+       
 
   let card = `   <div class="p-2  bg-secondary">
                 <div>
@@ -323,18 +327,20 @@ function finindex() {
 
 
 function findworkerid(workerId) {
-        
 
-  workers.forEach((worke,i ) =>{
-      
 
-    if(worke.id==workerId){
-              workers.splice(i,1)
-  
-  let emp= worke   
-  console.log("worker", emp);   
-      return emp;
-         
+  workers.forEach((worke, i) => {
+
+
+    if (worke.id == workerId) {
+      workers.splice(i, 1)
+      affichege()
+       affichegeworker()
+      let emp = worke
+      console.log("worker", emp);
+      savetozones(emp)
+
+
     }
   })
 
@@ -351,7 +357,7 @@ zones.forEach((zone) => {
       btn.addEventListener("click", (event) => {
         let workerId = btn.getAttribute("data-id");
         let obect = findworkerid(workerId);
-                savetowones(obect ,zontarged)
+
         console.log("worker ->", workerId);
         console.log("worker ->", obect);
       })
@@ -360,5 +366,31 @@ zones.forEach((zone) => {
 
   });
 });
+function savetozones(Worker) {
+  console.log("hi im her so  what you do");
+          
+  let listcard = document.getElementById(zontarged);
 
+  console.log(zontarged);
+
+  listcard.innerHTML = ""
+
+
+  let card = `<div class="container">
+          <div class="d-flex justify-content-between  border bg-light rounded-3">
+            <div>
+              <img src="${Worker.photo}" class="img-thumbnail background-sizi rounded-circle"
+                style="width: 80px; height: 80px" alt="photo de worker" />
+            </div>
+
+            <div>
+              <h5 class="card-title">${Worker.fullname}</h5>
+              <p class="card-text">${Worker.role}</p>
+            </div>
+
+            <butto data-id="${Worker.id}"  class="btnitem btn btn-danger">x</butto>
+          </div>`
+  listcard.innerHTML += card;
+
+}
 
