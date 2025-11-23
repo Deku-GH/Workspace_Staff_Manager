@@ -6,10 +6,7 @@ let seveurs = []
 let securirit = []
 let personnel = []
 let archives = []
-let workers = [
- 
-
-]
+let workers = []
 
 
 
@@ -17,21 +14,33 @@ let workers = [
 // 
 
 function validation(les_value) {
-  let valemail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/
+  let valemail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   let valname = /^[a-zA-Z ]+$/
   let valnumbre = /^\d{10}$/
   let valid = 0;
-  if (valname.test(les_value.fullname.value)) {
-    alert("true name")
-    valid++;
-  }
+
   if (valemail.test(les_value.email.value)) {
-    alert("true email")
+     console.log("its here");
+     
     valid++;
   }
-  if (valnumbre.test(les_value.telephone.value)) {
-    alert("true numbre")
+  else {
+    alert("the emial it not corecte")
+  }
+  if (valname.test(les_value.fullname.value)) {
+              console.log("its here");
     valid++;
+  }
+  else {
+    alert("the name it not corecte")
+  }
+  
+  if (valnumbre.test(les_value.telephone.value)) {
+        console.log("its here");
+    valid++;
+  }
+  else {
+    alert("the tele it not corecte")
   }
 
   return valid;
@@ -40,21 +49,22 @@ function validation(les_value) {
 // 
 affichegeworker()
 
-function affichege(worker) {
-  // 
-
+function affichege() {
   let card = document.getElementById('card');
+  card.innerHTML = ''
+  workers.forEach(Element => {
 
-  let cardbody = `<div class="container" >
-          <div    class="d-flex justify-content-between  border bg-light rounded-3">
+
+    let cardbody = `<div class="" >
+          <div    class=" d-flex border bg-light rounded-3 p-2 align-items-center gap-2">
           
-              <img src="${worker.photo}" data-index="${worker.id}" class="cardItem   img-thumbnail background-sizi rounded-circle"
+              <img src="${Element.photo}" data-index="${Element.id}" class="cardItem   img-thumbnail background-sizi rounded-circle"
                 style="width: 80px; height: 80px" alt="photo de worker"data-bs-toggle="modal" data-bs-target="#detailprofile" />
         
 
             <div>
-              <h5 class="card-title">${worker.fullname}</h5>
-              <p class="card-text">${worker.role}</p>
+              <h5 class="card-title">${Element.fullname}</h5>
+              <p class="card-text">${Element.role}</p>
             </div>
 
             <button type="button"  class="btn_card btn btn-primary " >
@@ -62,10 +72,12 @@ function affichege(worker) {
           </div>
           </div>
           `
-  card.innerHTML += cardbody;
+    card.innerHTML += cardbody;
+  })
 
-  let btn =document.querySelectorAll(".cardItem")
-btn.addEventListener("click",finindex())
+
+  let btn = document.querySelectorAll(".cardItem")
+  btn.addEventListener("click", finindex())
 
 }
 
@@ -75,82 +87,99 @@ document.forms["addworker"].addEventListener('submit', (e) => {
   e.preventDefault();
   let les_value = e.target;
 
-  // let valid = validation(les_value);
+  let valid = validation(les_value);
 
 
-
-  let worker = {
-    id: count++,
-    fullname: les_value.fullname.value,
-    role: les_value.role.value,
-    telephone: les_value.telephone.value,
-    email: les_value.email.value,
-    photo: les_value.photo.value,
-    Experiences: []
-  }
-
-         
-
-
-  for (let i = 0; i < les_value.exp.length; i++) {
-    worker.Experiences.push({
-      experiences: les_value.exp[i].value,
-      start: les_value.start[i].value,
-      end: les_value.endDate[i].value
-    })
-  }
-
-  workers.push(worker)
+  if (valid == 3) {
+    let worker = {
+      id: count++,
+      fullname: les_value.fullname.value,
+      role: les_value.role.value,
+      telephone: les_value.telephone.value,
+      email: les_value.email.value,
+      photo: les_value.photo.value,
+      Experiences: []
+    }
 
     
+    
+    
+
+    for (let i = 0; i <2; i++) {
+      console.log(les_value.exps.length);
+      worker.Experiences.push({
+
+        experiences: les_value.exps[i].value,
+        start: les_value.start[i].value,
+        end: les_value.endDate[i].value
+      })
+    }
+console.log(worker)
+    workers.push(worker)
+    addtoplace(worker);
   affichegeworker()
-  addtoplace(worker);
+  
 
   affichege(worker)
+  }
+  else{
+
+     validation(les_value);
+
+  }
+
+
+
 
 })
 
 // add tout la zone
 function addtoplace(worker) {
   if (worker.role == "Manager") {
-    comference = worker
-    reception = worker
-    seveurs = worker
-    securirit = worker
-    personnel = worker
-    archives = worker
+    comference.push(worker) 
+    reception.push(worker)
+    seveurs.push(worker)
+    securirit.push(worker)
+    personnel.push(worker)
+    archives.push(worker)
   }
   if (worker.role == "Nettoyage") {
-    comference = worker
-    reception = worker
-    seveurs = worker
-    securirit = worker
+    comference.push(worker)
+    reception.push(worker)
+    seveurs.push(worker)
+    securirit.push(worker)
 
   }
   if (worker.role == "it") {
-    comference = worker
-    reception = worker
-    seveurs = worker
-    personnel = worker
+    comference.push(worker)
+    reception.push(worker)
+    seveurs.push(worker)
+    personnel.push(worker)
   }
   if (worker.role == "securite") {
-    comference = worker
-    securirit = worker
-    reception = worker
-    personnel = worker
+    comference.push(worker)
+    securirit.push(worker)
+    reception.push(worker)
+    personnel.push(worker)
   }
   if (worker.role == "Autres roles") {
-    comference = worker
-    reception = worker
-    personnel = worker
+    comference.push(worker)
+    reception.push(worker)
+    personnel.push(worker)
   }
-
+       console.log(comference ) 
+       console.log( reception  ) 
+       console.log( seveurs ) 
+       console.log(  securirit ) 
+       console.log(personnel ) 
+       console.log(archives) 
+  
 }
 // =
 //add modaldaynamic
 
 document.getElementById('addExp').addEventListener('click', (even) => {
-
+          even.preventDefault();
   let formadaynamic = document.getElementById('formadaynamic');
 
 
@@ -210,27 +239,29 @@ function affichegedetailedempl(indx) {
   let photo = document.getElementById('photo_affi');
   let Fullname = document.getElementById('fullname_affi');
   let role = document.getElementById('role_affi');
-  
+  let telephone = document.getElementById('telephone_affi');
+
 
   let listcard = document.getElementById('listcard')
 
-             console.log(workers[indx].fullname);
-             
-                photo.setAttribute('src',"workers[indx].photo"),
-                Fullname.innerHTML= workers[indx].fullname,
-                email.innerHTML=workers[indx].email,
-                role.innerHTML=workers[indx].role
-         let list=workers.Experiences
-         console.log(list)
-         
- list.forEach(Element => {
+  console.log(workers[indx].fullname);
+
+  photo.setAttribute('src', workers[indx].photo),
+    Fullname.innerHTML = workers[indx].fullname,
+    email.innerHTML = workers[indx].email,
+    role.innerHTML = workers[indx].role
+      telephone.innerHTML =workers[indx].telephone
+
+
+
+  workers.forEach(Element => {
 
     let card = `
          <div class="card-text">Expériences:${Element.experiences} </div>
               <div class="card-text">start: ${Element.start}</div>
               <div class="card-text">end:${Element.end}</div>
     `
-    listcard.innerHTML += card;
+    listcard.innerHTML = card;
   })
 }
 
@@ -243,10 +274,10 @@ function finindex() {
   console.log("=================================");
 
   const cardItem = document.querySelectorAll(".cardItem")
-  console.log(cardItem)
+  
   cardItem.forEach(nod => {
     console.log("done")
-    
+
     nod.addEventListener("click", function () {
       console.log("done1")
       let indx = nod.getAttribute('data-index');
@@ -262,3 +293,7 @@ function finindex() {
 }
 
 
+// document.querySelectorAll('.btnItem').addEventListener("click",(e) => {
+
+
+// })

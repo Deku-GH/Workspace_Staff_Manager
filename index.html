@@ -47,9 +47,11 @@
       <div id="the_ofise" class="d-grid vh-100 ">
         <div class="row">
           <!-- comference -->
-          <div class="col-12 col-md-6 col-lg-4 " id="comference">
+          <div class="zones col-12 col-md-6 col-lg-4 "id="zone1" data-bs-toggle="modal"
+                data-bs-target="#detaileworker">
             <div class="d-flex justify-content-center">
-              <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#detaileworker">
+              <button type="button"  class=" btnItem btn btn-primary " data-bs-toggle="modal"
+                data-bs-target="#detaileworker">
                 +</button>
             </div>
 
@@ -63,39 +65,50 @@
                   <h5 class="card-title">mouad sertai</h5>
                   <p class="card-text">develop java & devops</p>
                 </div>
-                 <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#detailprofile">X</button>
+                <button type="button" class="btn btn-danger " data-bs-toggle="modal"
+                  data-bs-target="#detailprofile">X</button>
               </div>
             </div>
           </div>
           <!-- reception -->
-          <div class="col-12 col-md-6 col-lg-4" id="reception">reception <div class="d-flex justify-content-center">
-              <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#detaileworker">
+          <div class= "zones col-12 col-md-6 col-lg-4"  id="zone2" data-bs-toggle="modal"
+                data-bs-target="#detaileworker">reception <div class="d-flex justify-content-center">
+              <button type="button" class=" btnItem btn btn-primary " data-bs-toggle="modal"
+                data-bs-target="#detaileworker">
                 +</button>
             </div>
           </div>
           <!-- seveurs -->
-          <div class="col-12 col-md-6 col-lg-4" id="seveurs"> seveurs <div class="d-flex justify-content-center">
-              <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#detaileworker">
+          <div class="zones col-12 col-md-6 col-lg-4" id="zone3" data-bs-toggle="modal"
+                data-bs-target="#detaileworker"> seveurs <div class="d-flex justify-content-center">
+              <button type="button"   class=" btnItem btn btn-primary " data-bs-toggle="modal"
+                data-bs-target="#detaileworker">
                 +</button>
             </div>
           </div>
         </div>
         <div class="row">
           <!-- securirite -->
-          <div class="col-12 col-md-6 col-lg-4" id="securirite">securirite <div class="d-flex justify-content-center">
-              <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#detaileworker">
+          <div class="zones col-12 col-md-6 col-lg-4" id="zone4" data-bs-toggle="modal"
+                data-bs-target="#detaileworker">securirite <div class="d-flex justify-content-center">
+              <button type="button"  class="btnItem btn btn-primary " data-bs-toggle="modal"
+                data-bs-target="#detaileworker">
                 +</button>
             </div>
           </div>
           <!-- personnal -->
-          <div class="col-12 col-md-6 col-lg-4" id="personnal">personnal <div class="d-flex justify-content-center">
-              <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#detaileworker">
+          <div class="zones col-12 col-md-6 col-lg-4" id="zone5" data-bs-toggle="modal"
+                data-bs-target="#detaileworker">personnal <div class="d-flex justify-content-center">
+              <button type="button"  class="btnItem btn btn-primary " data-bs-toggle="modal"
+                data-bs-target="#detaileworker">
                 +</button>
             </div>
           </div>
           <!-- archived -->
-          <div class="col-12 col-md-6 col-lg-4" id="archived">archived <div class="d-flex justify-content-center">
-              <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#detaileworker">
+          <div class="zones col-12 col-md-6 col-lg-4" id="zone6" data-bs-toggle="modal"
+                data-bs-target="#detaileworker">archived <div class="d-flex justify-content-center">
+              <button type="button"  data-name="" class="btnItem btn btn-primary " data-bs-toggle="modal"
+                data-bs-target="#detaileworker">
                 +</button>
             </div>
           </div>
@@ -145,29 +158,7 @@
             </div>
 
             <div id="formadaynamic" class=" m-2 border p-2 border-black rounded-4 bg-secondary-subtle">
-              <div class="p-2  bg-secondary">
-                <div>
-                  <lsbel for="Expériences professionnelles" class="form_label">Expériences
-                    professionnelles</lsbel>
-                  <input type="text" class="form-control" name="exps" id="exp"
-                    placeholder="Expériences professionnelles">
-                </div>
-                <div class="row ">
-                  <div class="col-auto">
-                    <lsbel for="Expériences professionnelles" class="form_label"> time start</lsbel>
-                    <input type="date" class="form-control" name="start" id="start"
-                      placeholder="Expériences professionnelles">
-                  </div>
-                  <div class="col-auto">
-                    <lsbel for="Expériences professionnelles" class="form_label"> time end</lsbel>
-                    <input type="date" class="form-control" name="endDate" id="end"
-                      placeholder="Expériences professionnelles">
-
-                  </div>
-
-                </div>
-
-              </div>
+             
             </div>
 
             <button type="submit" class="btn btn-primary w-100" data-bs-dismiss="modal">add</button>
@@ -196,21 +187,26 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">profile</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div  class="modal-body">
+        <div class="modal-body">
           <div class="container">
             <div class="text-center ">
-              <img id="photo_affi"  src="1329-1760996163.png" class=" img-thumbnail background-sizi rounded-circle"
-                style="width: 160px; height: 160px" alt="photo de worker"  />
+              <img id="photo_affi" src="1329-1760996163.png" class=" img-thumbnail background-sizi rounded-circle"
+                style="width: 160px; height: 160px" alt="photo de worker" />
             </div>
 
             <div>
-              <h5 id="fullname_affi"class="card-title">full name : </h5>
-               <p id="email_affi" class="card-text"> EMIAL: </p>
+              <h5 id="fullname_affi" class="card-title">full name : </h5>
               <p id="role_affi" class="card-text"> Role : </p>
+              
+            </div>
+            <div>
+                 <p id="email_affi" class="card-text"> EMIAL: </p>
+              <p id="telephone_affi" class="card-text"> telephone: </p>
+
             </div>
 
-            <div id="listcard">
-              
+            <div id="listcard" >
+
             </div>
 
             <!--  -->
@@ -225,7 +221,7 @@
     </div>
   </div>
   <!--modal =2  -->
-  
+
   <!--  -->
   <div class="modal fade" id="detaileworker" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -237,12 +233,12 @@
         <div id="detailecard" class="modal-body">
           <!--  -->
 
-          
+
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-          </div>
+        </div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
