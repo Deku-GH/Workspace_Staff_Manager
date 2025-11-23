@@ -1,2 +1,6 @@
-# Workspace_Staff_Manager
-L’entreprise WorkSphere souhaite disposer d’une application web innovante dédiée à la gestion visuelle et interactive du personnel au sein de ses espaces de travail.  L’objectif principal est de faciliter l’organisation et la répartition des employés sur un plan d’étage en temps réel, 
+LINK HORTING
+https://deku-gh.github.io/Workspace_Staff_Manager/
+
+JIRA
+https://mouadsertati9.atlassian.net/jira/software/projects/WSM/boards/1?atlOrigin=eyJpIjoiZGQ2YzgzMjE5MmVkNDBhMjkyZWZiOGNlMzRkN2RlNjkiLCJwIjoiaiJ9
+

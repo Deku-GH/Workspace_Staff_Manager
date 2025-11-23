@@ -1,4 +1,4 @@
-
+let zontarged = " "
 let count = 0;
 let comference = []
 let reception = []
@@ -6,13 +6,27 @@ let seveurs = []
 let securirit = []
 let personnel = []
 let archives = []
-let workers = []
+
+let workers = [
+  // {
+  //    id: 0,
+  //       fullname: "mouad",
+  //       role: "it",
+  //       telephone: "09493839",
+  //       email:" les_value.e",
+  //       photo: "les_value.photo.value",
+  //       Experiences: []
+  // }  
+]
+
+affichegeworker()
 
 
 
 
-// 
 
+
+//========================
 function validation(les_value) {
   let valemail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   let valname = /^[a-zA-Z ]+$/
@@ -20,23 +34,23 @@ function validation(les_value) {
   let valid = 0;
 
   if (valemail.test(les_value.email.value)) {
-     console.log("its here");
-     
+    console.log("its here");
+
     valid++;
   }
   else {
     alert("the emial it not corecte")
   }
   if (valname.test(les_value.fullname.value)) {
-              console.log("its here");
+    console.log("its here");
     valid++;
   }
   else {
     alert("the name it not corecte")
   }
-  
+
   if (valnumbre.test(les_value.telephone.value)) {
-        console.log("its here");
+    console.log("its here");
     valid++;
   }
   else {
@@ -67,7 +81,7 @@ function affichege() {
               <p class="card-text">${Element.role}</p>
             </div>
 
-            <button type="button"  class="btn_card btn btn-primary " >
+            <button type="button"   class=" btn_card btn btn-primary " >
                 voir</button>
           </div>
           </div>
@@ -80,7 +94,33 @@ function affichege() {
   btn.addEventListener("click", finindex())
 
 }
+document.getElementById('addExp').addEventListener('click', (even) => {
 
+  let formadaynamic = document.getElementById('formadaynamic');
+
+
+  let card = `   <div class="p-2  bg-secondary">
+                <div>
+                  <lsbel for="Expériences professionnelles" class="form_label">Expériences professionnelles</lsbel>
+                  <input type="text" class="form-control" name="exp" id="exp" placeholder="Expériences professionnelles">
+                </div>
+                <div class="row ">
+                  <div class="col-auto">
+                    <lsbel for="Expériences professionnelles" class="form_label"> time start</lsbel>
+                    <input type="date" class="form-control"name="start" id="start" placeholder="Expériences professionnelles">
+                  </div>
+                  <div class="col-auto">
+                    <lsbel for="Expériences professionnelles" class="form_label"> time end</lsbel>
+                    <input type="date" class="form-control" name="endDate" id="endDate" placeholder="Expériences professionnelles">
+                  </div>
+                </div>
+              </div>
+    `
+
+
+  formadaynamic.innerHTML += card
+
+})
 
 document.forms["addworker"].addEventListener('submit', (e) => {
 
@@ -101,30 +141,34 @@ document.forms["addworker"].addEventListener('submit', (e) => {
       Experiences: []
     }
 
-    
-    
-    
 
-    for (let i = 0; i <2; i++) {
-      console.log(les_value.exps.length);
+    console.log(les_value.start.length);
+
+
+
+    for (let i = 0; i < les_value.start.length; i++) {
+
       worker.Experiences.push({
 
-        experiences: les_value.exps[i].value,
-        start: les_value.start[i].value,
-        end: les_value.endDate[i].value
+        exp: exp[i].value,
+        start: start[i].value,
+        endDate: endDate[i].value
       })
+      console.log(worker.Experiences)
     }
-console.log(worker)
+    console.log(worker)
     workers.push(worker)
     addtoplace(worker);
-  affichegeworker()
-  
+    affichegeworker()
 
-  affichege(worker)
+
+
+
+    affichege(worker)
   }
-  else{
+  else {
 
-     validation(les_value);
+    validation(les_value);
 
   }
 
@@ -136,7 +180,7 @@ console.log(worker)
 // add tout la zone
 function addtoplace(worker) {
   if (worker.role == "Manager") {
-    comference.push(worker) 
+    comference.push(worker)
     reception.push(worker)
     seveurs.push(worker)
     securirit.push(worker)
@@ -167,46 +211,20 @@ function addtoplace(worker) {
     reception.push(worker)
     personnel.push(worker)
   }
-       console.log(comference ) 
-       console.log( reception  ) 
-       console.log( seveurs ) 
-       console.log(  securirit ) 
-       console.log(personnel ) 
-       console.log(archives) 
-  
+  console.log(comference)
+  console.log(reception)
+  console.log(seveurs)
+  console.log(securirit)
+  console.log(personnel)
+  console.log(archives)
+
 }
 // =
 //add modaldaynamic
 
-document.getElementById('addExp').addEventListener('click', (even) => {
-          even.preventDefault();
-  let formadaynamic = document.getElementById('formadaynamic');
 
 
-  let card = `   <div class="p-2  bg-secondary">
-                <div>
-                  <lsbel for="Expériences professionnelles" class="form_label">Expériences professionnelles</lsbel>
-                  <input type="text" class="form-control" id="exp" placeholder="Expériences professionnelles">
-                </div>
-                <div class="row ">
-                  <div class="col-auto">
-                    <lsbel for="Expériences professionnelles" class="form_label"> time start</lsbel>
-                    <input type="date" class="form-control" id="start" placeholder="Expériences professionnelles">
-                  </div>
-                  <div class="col-auto">
-                    <lsbel for="Expériences professionnelles" class="form_label"> time end</lsbel>
-                    <input type="date" class="form-control"name="endDate" id="end" placeholder="Expériences professionnelles">
-                  </div>
-                </div>
-              </div>
-    `
 
-
-  formadaynamic.innerHTML += card
-
-})
-
-affichegeworker()
 function affichegeworker() {
   let listcard = document.getElementById('detailecard');
 
@@ -226,7 +244,7 @@ function affichegeworker() {
               <p class="card-text">${Element.role}</p>
             </div>
 
-            <butto  class="btn btn-primary">+</butto>
+            <butto data-id="${Element.id}"  class="btnitem btn btn-primary">+</butto>
           </div>`
     listcard.innerHTML += card;
   })
@@ -242,26 +260,36 @@ function affichegedetailedempl(indx) {
   let telephone = document.getElementById('telephone_affi');
 
 
-  let listcard = document.getElementById('listcard')
+  let lstcard = document.getElementById("listcard");
 
-  console.log(workers[indx].fullname);
+
 
   photo.setAttribute('src', workers[indx].photo),
     Fullname.innerHTML = workers[indx].fullname,
     email.innerHTML = workers[indx].email,
     role.innerHTML = workers[indx].role
-      telephone.innerHTML =workers[indx].telephone
+  telephone.innerHTML = workers[indx].telephone
+
+  console.log(workers.Experiences);
+
+
+
 
 
 
   workers.forEach(Element => {
-
-    let card = `
-         <div class="card-text">Expériences:${Element.experiences} </div>
-              <div class="card-text">start: ${Element.start}</div>
-              <div class="card-text">end:${Element.end}</div>
+    Element.Experiences.forEach(exp => {
+      lstcard.innerHTML = "";
+      let card = `
+                 
+         <div class="card-text">Expériences:${exp.exp} </div>
+              <div class="card-text">start: ${exp.start}</div>
+              <div class="card-text">end:${exp.endDate}</div>
     `
-    listcard.innerHTML = card;
+      lstcard.innerHTML += card;
+
+    })
+
   })
 }
 
@@ -274,7 +302,7 @@ function finindex() {
   console.log("=================================");
 
   const cardItem = document.querySelectorAll(".cardItem")
-  
+
   cardItem.forEach(nod => {
     console.log("done")
 
@@ -293,7 +321,44 @@ function finindex() {
 }
 
 
-// document.querySelectorAll('.btnItem').addEventListener("click",(e) => {
+
+function findworkerid(workerId) {
+        
+
+  workers.forEach((worke,i ) =>{
+      
+
+    if(worke.id==workerId){
+              workers.splice(i,1)
+  
+  let emp= worke   
+  console.log("worker", emp);   
+      return emp;
+         
+    }
+  })
+
+}
 
 
-// })
+let zones = document.querySelectorAll('.zones')
+console.log(zones);
+zones.forEach((zone) => {
+  zone.addEventListener("click", (event) => {
+    zontarged = event.target.getAttribute("id");
+
+    document.querySelectorAll(".btnitem").forEach(btn => {
+      btn.addEventListener("click", (event) => {
+        let workerId = btn.getAttribute("data-id");
+        let obect = findworkerid(workerId);
+                savetowones(obect ,zontarged)
+        console.log("worker ->", workerId);
+        console.log("worker ->", obect);
+      })
+
+    });
+
+  });
+});
+
+
