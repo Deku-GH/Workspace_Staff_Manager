@@ -1,12 +1,16 @@
-let zontarged = " "
-let count = 0;
-let comference = []
-let reception = []
-let seveurs = []
-let securirit = []
-let personnel = []
-let archives = []
 
+let count = 0;
+let lenzone = [
+
+]
+let zone1 = []
+let zone2 = []
+let zone3 = []
+let zone4 = []
+let zone5 = []
+let zone6 = []
+let listzones = [3, 4, 2, 4, 3, 5]
+let Listzones = ["zone1", "zone2", "zone3", "zone4", "zone5", "zone6"]
 let workers = [
   // {
   //    id: 0,
@@ -26,7 +30,7 @@ affichegeworker()
 
 
 
-//========================
+//==========validation ========
 function validation(les_value) {
   let valemail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   let valname = /^[a-zA-Z ]+$/
@@ -54,7 +58,7 @@ function validation(les_value) {
     valid++;
   }
   else {
-    alert("the tele it not corecte")
+    alert("the telephone it not corecte")
   }
 
   return valid;
@@ -62,7 +66,7 @@ function validation(les_value) {
 
 // 
 affichegeworker()
-
+// afficgheg the list of worker in aside bar
 function affichege() {
   let card = document.getElementById('card');
   card.innerHTML = ''
@@ -98,10 +102,11 @@ function affichege() {
   });
 
 }
+//add the forma daynamic
 document.getElementById('addExp').addEventListener('click', (even) => {
 
   let formadaynamic = document.getElementById('formadaynamic');
-       
+
 
   let card = `   <div class="p-2  bg-secondary">
                 <div>
@@ -125,7 +130,7 @@ document.getElementById('addExp').addEventListener('click', (even) => {
   formadaynamic.innerHTML += card
 
 })
-
+//get the  value from the input 
 document.forms["addworker"].addEventListener('submit', (e) => {
 
   e.preventDefault();
@@ -162,7 +167,7 @@ document.forms["addworker"].addEventListener('submit', (e) => {
     }
     console.log(worker)
     workers.push(worker)
-    addtoplace(worker);
+
     affichegeworker()
 
 
@@ -181,54 +186,11 @@ document.forms["addworker"].addEventListener('submit', (e) => {
 
 })
 
-// add tout la zone
-function addtoplace(worker) {
-  if (worker.role == "Manager") {
-    comference.push(worker)
-    reception.push(worker)
-    seveurs.push(worker)
-    securirit.push(worker)
-    personnel.push(worker)
-    archives.push(worker)
-  }
-  if (worker.role == "Nettoyage") {
-    comference.push(worker)
-    reception.push(worker)
-    seveurs.push(worker)
-    securirit.push(worker)
-
-  }
-  if (worker.role == "it") {
-    comference.push(worker)
-    reception.push(worker)
-    seveurs.push(worker)
-    personnel.push(worker)
-  }
-  if (worker.role == "securite") {
-    comference.push(worker)
-    securirit.push(worker)
-    reception.push(worker)
-    personnel.push(worker)
-  }
-  if (worker.role == "Autres roles") {
-    comference.push(worker)
-    reception.push(worker)
-    personnel.push(worker)
-  }
-  console.log(comference)
-  console.log(reception)
-  console.log(seveurs)
-  console.log(securirit)
-  console.log(personnel)
-  console.log(archives)
-
-}
-// =
-//add modaldaynamic
 
 
 
 
+//affachege the worker in modal
 function affichegeworker() {
   let listcard = document.getElementById('detailecard');
 
@@ -255,7 +217,7 @@ function affichegeworker() {
 }
 
 
-
+//affiche the infermition
 function affichegedetailedempl(indx) {
   let email = document.getElementById('email_affi');
   let photo = document.getElementById('photo_affi');
@@ -300,7 +262,7 @@ function affichegedetailedempl(indx) {
 
 
 
-// ==================
+// ==========search for worker for affichage the detail======
 function finindex() {
 
   console.log("=================================");
@@ -308,12 +270,11 @@ function finindex() {
   const cardItem = document.querySelectorAll(".cardItem")
 
   cardItem.forEach(nod => {
-    console.log("done")
 
     nod.addEventListener("click", function () {
-      console.log("done1")
+
       let indx = nod.getAttribute('data-index');
-      console.log(indx)
+
       affichegedetailedempl(indx)
     })
 
@@ -325,7 +286,7 @@ function finindex() {
 }
 
 
-
+//==find the index of the worker to add to zone
 function findworkerid(workerId) {
 
 
@@ -335,62 +296,170 @@ function findworkerid(workerId) {
     if (worke.id == workerId) {
       workers.splice(i, 1)
       affichege()
-       affichegeworker()
+      affichegeworker()
       let emp = worke
       console.log("worker", emp);
       savetozones(emp)
-
-
     }
   })
 
 }
 
-
+//==find the zone they click on
+let zontarged = ""
 let zones = document.querySelectorAll('.zones')
 console.log(zones);
 zones.forEach((zone) => {
   zone.addEventListener("click", (event) => {
-    zontarged = event.target.getAttribute("id");
+    zontarged = zone.getAttribute("id");
+    console.log(zontarged);
 
     document.querySelectorAll(".btnitem").forEach(btn => {
       btn.addEventListener("click", (event) => {
         let workerId = btn.getAttribute("data-id");
-        let obect = findworkerid(workerId);
+        findworkerid(workerId);
 
-        console.log("worker ->", workerId);
-        console.log("worker ->", obect);
+
+
       })
 
     });
 
   });
 });
+//==save to zone 
 function savetozones(Worker) {
-  console.log("hi im her so  what you do");
-          
-  let listcard = document.getElementById(zontarged);
+
+
+
 
   console.log(zontarged);
+  console.log(Worker);
+  ajoutezone(Worker);
 
-  listcard.innerHTML = ""
 
 
-  let card = `<div class="container">
+  document.querySelectorAll(".btnitemX").forEach(btn => {
+    btn.addEventListener("click", (event) => {
+      console.log("XXXXXX");
+
+      let workerId = btn.getAttribute("data-id");
+      ajouteasidebar(workerId)
+        ;
+    })
+  })
+
+
+
+}
+
+
+function ajoutezone(Worker) {
+  switch (zontarged) {
+    case 'zone1':
+      zone1.push(Worker)
+      console.log(zone1);
+      affiazones(zone1)
+
+      break;
+    case 'zone2':
+      zone2.push(Worker)
+      console.log(zone2);
+      affiazones(zone2)
+
+      break;
+    case 'zone3':
+      zone3.push(Worker)
+      console.log(zone3);
+      affiazones(zone3)
+
+      break;
+    case 'zone4':
+      zone4.push(Worker)
+      console.log(zone4);
+      affiazones(zone4)
+
+      break;
+    case 'zone5':
+      zone5.push(Worker)
+      console.log(zone5);
+      affiazones(zone5)
+
+
+      break;
+    case 'zone6':
+      zone6.push(Worker)
+      console.log(zone6);
+      affiazones(zone6)
+
+      break;
+  }
+}
+
+
+//==========
+function ajouteasidebar(Worker) {
+  console.log(workers);
+  switch (zontarged) {
+    case 'zone1':
+      workers.push(zone1[Worker])
+      console.log(workers);
+
+
+      break;
+    case 'zone2':
+      workers.push(zone2[Worker])
+      console.log(workers);
+
+      break;
+    case 'zone3':
+      workers.push(zone3[Worker])
+      console.log(workers);
+      break;
+    case 'zone4':
+      workers.push(zone4[Worker])
+      console.log(workers);
+
+      break;
+    case 'zone5':
+      workers.push(zone5[Worker])
+      console.log(workers);
+
+      break;
+    case 'zone6':
+      workers.push(zone6[Worker])
+      console.log(workers);
+
+      break;
+  }
+}
+
+
+function affiazones(zone) {
+
+
+
+  let listcard = document.getElementById(zontarged);
+
+
+  zone.forEach(emp => {
+
+    listcard.innerHTML = ""
+    let card = `<div class="container">
           <div class="d-flex justify-content-between  border bg-light rounded-3">
             <div>
-              <img src="${Worker.photo}" class="img-thumbnail background-sizi rounded-circle"
+              <img src="${emp.photo}" class="img-thumbnail background-sizi rounded-circle"
                 style="width: 80px; height: 80px" alt="photo de worker" />
             </div>
 
             <div>
-              <h5 class="card-title">${Worker.fullname}</h5>
+              <h5 class="card-title">${emp.fullname}</h5>
               <p class="card-text">${Worker.role}</p>
             </div>
 
-            <butto data-id="${Worker.id}"  class="btnitem btn btn-danger">x</butto>
+            <butto data-id="${emp.id}"  class="btnitemX btn btn-danger">x</butto>
           </div>`
-  listcard.innerHTML += card;
+    listcard.innerHTML += card;
+  })
 
 }
-

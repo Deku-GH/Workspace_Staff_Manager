@@ -1,49 +1,49 @@
-#comference{
-background-image: url('1.png');
-background-position: center;
+#zone1 {
+    background-image: url('1.png');
+    background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-   
+
 
 }
-#reception{
+
+#zone2 {
     background-image: url('5.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-   
+
 
 }
-#seveurs{
-background-image: url('3.png');
-background-position: center;
+
+#zone3 {
+    background-image: url('3.png');
+    background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-   
+
 
 }
-#securirite{
-background-image: url('4.png');
-background-position: center;
+
+#zone4 {
+    background-image: url('4.png');
+    background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-   
+
 
 }
-#personnal{
-background-image: url('6.png');
-background-position: center;
+
+#zone5 {
+    background-image: url('6.png');
+    background-position: center;
     background-repeat: no-repeat;
-   
-   
-
+      background-size: 100% 100%;
 }
-#archived{
+
+#zone6 {
     background-image: url('2.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-   
-
-
 }
