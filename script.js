@@ -231,7 +231,7 @@ function affichegedetailedempl(indx) {
 
 
   // photo.setAttribute('src', workers[indx].photo) ,
-    Fullname.innerHTML = workers[indx].fullname,
+  Fullname.innerHTML = workers[indx].fullname,
     email.innerHTML = workers[indx].email,
     role.innerHTML = workers[indx].role
   telephone.innerHTML = workers[indx].telephone
@@ -340,11 +340,14 @@ function savetozones(Worker) {
 
   document.querySelectorAll(".btnitemX").forEach(btn => {
     btn.addEventListener("click", (event) => {
-      console.log("XXXXXX");
-
+         
       let workerId = btn.getAttribute("data-id");
-      
+        btn.closest("div").remove()
+
       ajouteasidebar(workerId);
+            
+            
+
     })
   })
 
@@ -359,15 +362,15 @@ function ajoutezone(Worker) {
       zone1.push(Worker)
       console.log(zone1);
       affichege()
-  affichegeworker()
-  affiazones(zone1)
+      affichegeworker()
+      affiazones(zone1)
 
       break;
     case 'zone2':
       zone2.push(Worker)
       console.log(zone2);
       affichege()
-  affichegeworker()
+      affichegeworker()
       affiazones(zone2)
 
       break;
@@ -375,7 +378,7 @@ function ajoutezone(Worker) {
       zone3.push(Worker)
       console.log(zone3);
       affichege()
-  affichegeworker()
+      affichegeworker()
       affiazones(zone3)
 
       break;
@@ -383,7 +386,7 @@ function ajoutezone(Worker) {
       zone4.push(Worker)
       console.log(zone4);
       affichege()
-  affichegeworker()
+      affichegeworker()
       affiazones(zone4)
 
       break;
@@ -391,7 +394,7 @@ function ajoutezone(Worker) {
       zone5.push(Worker)
       console.log(zone5);
       affichege()
-  affichegeworker()
+      affichegeworker()
       affiazones(zone5)
 
 
@@ -400,12 +403,12 @@ function ajoutezone(Worker) {
       zone6.push(Worker)
       console.log(zone6);
       affichege()
-  affichegeworker()
+      affichegeworker()
       affiazones(zone6)
 
       break;
-      default:
-        break;
+    default:
+      break;
   }
 
 }
@@ -418,8 +421,8 @@ function ajouteasidebar(Worker) {
     case 'zone1':
       workers.push(zone1[Worker])
       zone1.splice(Worker, 1)
-        affichege()
-  affichegeworker()
+      affichege()
+      affichegeworker()
       affiazones(zone1)
       console.log(workers);
 
@@ -428,18 +431,18 @@ function ajouteasidebar(Worker) {
     case 'zone2':
       workers.push(zone2[Worker])
       zone2.splice(Worker, 1)
-        affichege()
-  affichegeworker()
+      affichege()
+      affichegeworker()
       console.log(zone2);
       affiazones(zone2)
-      
+
 
       break;
     case 'zone3':
       workers.push(zone3[Worker])
       zone3.splice(Worker, 1)
-        affichege()
-  affichegeworker()
+      affichege()
+      affichegeworker()
       console.log(zone3);
       affiazones(zone3)
 
@@ -448,6 +451,8 @@ function ajouteasidebar(Worker) {
     case 'zone4':
       workers.push(zone4[Worker])
       zone4.splice(Worker, 1)
+      affichege()
+      affichegeworker()
       console.log(zone4);
       affiazones(zone4)
       console.log(workers);
@@ -456,8 +461,8 @@ function ajouteasidebar(Worker) {
     case 'zone5':
       workers.push(zone5[Worker])
       zone5.splice(Worker, 1)
-        affichege()
-  affichegeworker()
+      affichege()
+      affichegeworker()
       console.log(zone5);
       affiazones(zone5)
       console.log(workers);
@@ -466,15 +471,15 @@ function ajouteasidebar(Worker) {
     case 'zone6':
       workers.push(zone6[Worker])
       zone6.splice(Worker, 1)
-        affichege()
-  affichegeworker()
+      affichege()
+      affichegeworker()
       console.log(zone6);
       affiazones(zone6)
       console.log(workers);
 
       break;
-      default:
-        break;
+    default:
+      break;
   }
 
 }
@@ -483,14 +488,14 @@ function ajouteasidebar(Worker) {
 function affiazones(zone) {
 
 
-console.log("its worker here");
+  console.log("its worker here");
   let listcard = document.getElementById(zontarged);
 
-console.log(zone);
+  console.log(zone);
 
   zone.forEach(emp => {
 
-    
+
     let card = `<div class="container">
           <div class="d-flex justify-content-between  border bg-light rounded-3">
             <div>
